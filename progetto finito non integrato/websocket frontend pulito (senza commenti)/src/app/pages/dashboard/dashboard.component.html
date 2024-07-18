@@ -1,0 +1,28 @@
+<main>
+  <div id="chat-page">
+    <div class="users-list">
+      <div class="users-list-container">
+        <h2>Utenti Connessi</h2>
+        <ul id="connectedUsers">
+          <li *ngFor="let user of users$ | async" (click)="startChat(user)">
+            {{ user.nickname }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="chat-area">
+      <div id="chat-mess" *ngIf="selectedUser">
+        <h2 id="selUser">{{ selectedUser.nickname }}</h2>
+        <div id="chat-messagess" class="chat-messagess">
+          <div *ngFor="let message of messages" class="message">
+            <p>{{ message.sender.nickname }}: {{ message.text }}</p>
+          </div>
+        </div>
+        <form id="messageForm" name="messageForm" class="message-input" (ngSubmit)="onSubmit()">
+          <input autocomplete="off" type="text" id="message" placeholder="Scrivi il tuo messaggio..." [(ngModel)]="messageText" name="message">
+          <button type="submit">Invia</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,23 @@
+<div class="parent">
+    <div class="container">
+        <div  class="login-box" id="username-page">
+            <h2 span lang="en">Login</h2>
+            <form (ngSubmit)="onLogin()">
+                <div class="input-box">
+                    <label for="nickname"><span lang="en">Nickname:</span></label>
+                    <input type="text" [(ngModel)]="loginObj.nickname" id="nickname" name="nickname" placeholder="Inserisci il tuo nome utente" required>
+                </div>
+                <div class="input-box">
+                    <label for="email"><span lang="en">Email:</span></label>
+                    <input type="text" [(ngModel)]="loginObj.email" id="email" name="email" placeholder="Inserisci la tua email" required>
+                </div>
+                <div class="input-box">
+                    <label for="password"><span lang="en">Password:</span></label>
+                    <input type="text" [(ngModel)]="loginObj.password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                </div>
+
+                <button type="submit" class="btn"><span lang="en">Login</span></button>
+            </form>
+        </div>
+    </div>
+</div>
